@@ -29,11 +29,5 @@ public class DashSkill : ISkill
 		lastUsedTime = Time.time;
 
 		player.StateMachine.ChangeState(player.DashState);
-		float angle = playerTransform.eulerAngles.z - 60f;//sprite yüzünden 60 derece kaydýrdým
-		Vector2 dashDirection = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
-
-
-		rb.AddForce(dashDirection * dashSkillData.dashDistance, ForceMode2D.Impulse);
-
 	}
 }

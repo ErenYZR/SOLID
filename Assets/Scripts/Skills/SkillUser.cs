@@ -7,6 +7,9 @@ public class SkillUser : MonoBehaviour
     ISkill[] skillSlots = new ISkill[2];
 	private IInputReader input;
 	[SerializeField] private DashSkillData dashData;
+	[SerializeField] private FireballSkillData fireballData;
+	[SerializeField] private DefaultProjectileSpawner projectileSpawner;
+
 	private Rigidbody2D rb;
 	private Player player;
 	private void Awake()
@@ -19,7 +22,7 @@ public class SkillUser : MonoBehaviour
 	void Start()
     {
         skillSlots[0] = new DashSkill(rb,dashData,transform,player);
-		skillSlots[1] = new FireballSkill();
+		skillSlots[1] = new FireballSkill(fireballData,transform,projectileSpawner);
 	}
 
     void Update()

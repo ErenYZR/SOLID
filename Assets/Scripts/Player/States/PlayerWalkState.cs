@@ -4,9 +4,7 @@ public class PlayerWalkState : PlayerState
 	private IInputReader input => player.InputReader;
 	private float moveSpeed => player.MovementSpeed;
 
-	public PlayerWalkState(Player player, PlayerStateMachine stateMachine)
-		: base(player, stateMachine)
-	{ }
+	public PlayerWalkState(Player player, PlayerStateMachine stateMachine): base(player, stateMachine){ }
 
 	public override void FixedUpdate()
 	{

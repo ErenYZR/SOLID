@@ -10,19 +10,24 @@ public class PlayerDashState : PlayerState
 
 	public override void Enter()
 	{
-		dashDir = player.transform.right;
+		float angle = player.transform.eulerAngles.z - 30f;//sprite yüzünden 30 derece kaydýrdým
+		dashDir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+
 		dashTimeLeft = player.dashData.dashDuration;
 
 		player.Rigidbody.velocity = Vector2.zero;
-		player.Rigidbody.AddForce(dashDir * player.dashData.dashDistance, ForceMode2D.Impulse);
 	}
 
 	public override void Update()
 	{
+
+		player.Rigidbody.velocity = dashDir * player.dashData.dashSpeed;
+
 		dashTimeLeft -= Time.deltaTime;
+
 		if (dashTimeLeft <= 0f)
 		{
-			stateMachine.ChangeState(player.WalkState); // yürümeye geri dön
+			stateMachine.ChangeState(player.WalkState);
 		}
 	}
 }

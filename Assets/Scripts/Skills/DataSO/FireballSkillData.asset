@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db4787895518b048bef6874471d024b, type: 3}
-  m_Name: DashSkill
+  m_Script: {fileID: 11500000, guid: c656b7da2bbf68a43be66ae795c28a5e, type: 3}
+  m_Name: FireballSkillData
   m_EditorClassIdentifier: 
-  dashSpeed: 15
-  dashDuration: 0.15
-  cooldown: 0.7
+  projectilePrefab: {fileID: 0}
+  damage: 0
+  cooldown: 0
