@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class EnemyBase : MonoBehaviour , IDamageable
+public class EnemyBase : MonoBehaviour
 {
-    [SerializeField]private float maxHealth = 100;
-    [SerializeField]private float currentHealth;
+
 
 	private void Awake()
 	{
-        currentHealth = maxHealth;
+        
 	}
 
 	void Start()
@@ -20,23 +19,9 @@ public class EnemyBase : MonoBehaviour , IDamageable
 
     void Update()
     {
-        if(Keyboard.current.rKey.wasPressedThisFrame)
-		{
-			TakeDamage(10f);
-		}
-	}
-	public void TakeDamage(float amount)
-	{
-		currentHealth -= amount;
-		Debug.Log($"{gameObject.name} took {amount} damage. Remaining: {currentHealth}");
 
-		if (currentHealth <= 0) Die();
 	}
 
-	protected virtual void Die()
-    {
-        Destroy(gameObject);
-    }
 
 
 }

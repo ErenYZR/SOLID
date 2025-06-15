@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 2690566963000703358}
   - component: {fileID: 6288965593789234822}
   - component: {fileID: 987362359536983316}
-  - component: {fileID: 5821630474027189059}
+  - component: {fileID: 8389859380847555787}
   - component: {fileID: 3877539467915890174}
+  - component: {fileID: 5821630474027189059}
+  - component: {fileID: 96188615395061285}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -114,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &5821630474027189059
+--- !u!114 &8389859380847555787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,12 +125,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8078816772661007079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7873c69ebf8a504ca94a53a85975fc9, type: 3}
+  m_Script: {fileID: 11500000, guid: ba219ee1361524d42b4b1594cd583558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  moveSpeed: 3
 --- !u!58 &3877539467915890174
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,3 +165,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5821630474027189059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078816772661007079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7873c69ebf8a504ca94a53a85975fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+--- !u!114 &96188615395061285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078816772661007079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a7d614944318f46a548d033c8b3401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  cooldown: 1
+  validTargets:
+  - Player

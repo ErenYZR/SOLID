@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c656b7da2bbf68a43be66ae795c28a5e, type: 3}
   m_Name: FireballSkillData
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  damage: 0
-  cooldown: 0
+  projectilePrefab: {fileID: 2191420635849053472, guid: 709baa3a9dc2c6d4b8594d64d6d94706, type: 3}
+  speed: 5
+  damage: 25
+  cooldown: 1

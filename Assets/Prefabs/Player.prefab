@@ -87,9 +87,11 @@ GameObject:
   - component: {fileID: 2752203576288245833}
   - component: {fileID: 4760926706776550329}
   - component: {fileID: 3412326173382859521}
+  - component: {fileID: 2317523421714782348}
   - component: {fileID: 2102531805894675062}
   - component: {fileID: 6654345610466470986}
   - component: {fileID: 7267093097194017788}
+  - component: {fileID: 7592594175689510269}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Player
@@ -192,6 +194,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &2317523421714782348
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6077189402339860401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.21133333}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &2102531805894675062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,3 +271,17 @@ MonoBehaviour:
   dashData: {fileID: 11400000, guid: 7a83d40f219b6244a85a261d7509fbbb, type: 2}
   fireballData: {fileID: 11400000, guid: 291bfe6e4d89eda49a7be0258b1fe78b, type: 2}
   projectileSpawner: {fileID: 3108700150140649135}
+--- !u!114 &7592594175689510269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6077189402339860401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f55414331e86e448a0fe95e0a41f1c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0

@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageReceiver
 {
 	public Rigidbody2D Rigidbody { get; private set; }
 	public IInputReader InputReader { get; private set; }
+
+	public string DamageReceiverTag => "Player";
 
 	public float MovementSpeed => movementSpeed;
 	public float LookRotationOffset => lookRotationOffset;
