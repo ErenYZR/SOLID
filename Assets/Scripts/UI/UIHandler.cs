@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIHandler : MonoBehaviour
 {
+	[SerializeField] private GameObject gameOverPanel;
 	private void OnEnable()
 	{
 		PlayerHealth.OnPlayerDied += HandlePlayerDeath;
@@ -18,5 +19,6 @@ public class UIHandler : MonoBehaviour
 	private void HandlePlayerDeath()
 	{
 		Time.timeScale = 0f;
+		gameOverPanel.SetActive(true);
 	}
 }
