@@ -6,7 +6,7 @@ public class MainMenuButtonController : MonoBehaviour
 {
 	public void StartGame()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+		SceneLoader.Instance.LoadScene(SceneLoader.SceneType.Level1);
 		Time.timeScale = 1f;
 	}
 

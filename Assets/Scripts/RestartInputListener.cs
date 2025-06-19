@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class RestartInputListener : MonoBehaviour
 {
@@ -7,7 +8,16 @@ public class RestartInputListener : MonoBehaviour
 	{
 		if (Time.timeScale == 0 && Keyboard.current.rKey.wasPressedThisFrame)
 		{
-			LevelManager.Instance.RestartScene();
+			SceneLoader.Instance.RestartCurrentScene();
 		}
+	}
+
+	public void RestartScene()
+	{
+		SceneLoader.Instance.RestartCurrentScene();
+	}
+	public void ReturnMainMenu()
+	{
+		SceneManager.LoadScene("MainMenu");
 	}
 }

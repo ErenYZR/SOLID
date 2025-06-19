@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,4 +24,4 @@ public class LevelManager : MonoBehaviour
 		UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneIndex);
 		Time.timeScale = 1f;
 	}
-}
+}*/
