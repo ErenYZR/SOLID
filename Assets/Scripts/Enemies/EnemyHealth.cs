@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IDamageReceiver
 {
 	[SerializeField] private float maxHealth = 100f;
 	[SerializeField] private float currentHealth;
+	public Action OnEnemyDied;
 
 	public string DamageReceiverTag => "Enemy";
 
@@ -33,6 +35,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IDamageReceiver
 
 	protected virtual void Die()
     {
-        Destroy(gameObject);
+		OnEnemyDied?.Invoke();
+		Destroy(gameObject);
     }
 }

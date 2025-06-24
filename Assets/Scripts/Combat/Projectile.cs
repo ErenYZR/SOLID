@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
 	private Rigidbody2D rb;
     private float speed = 10f;
     private float damage;
+	[SerializeField] private List<string> unvalidTargetTags;
+
 
 	public void Initialize(float speed, float damage)
 	{
@@ -19,12 +21,15 @@ public class Projectile : MonoBehaviour
 
 		rb.velocity = direction * speed;
 	}
+
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.TryGetComponent(out IDamageable damageable))
+		if (other.TryGetComponent(out IDamageReceiver receiver) &&
+			!unvalidTargetTags.Contains(receiver.DamageReceiverTag) && //listede olmayan nesnelere hasar verilir.
+			other.TryGetComponent(out IDamageable damageable))
 		{
-			Destroy(gameObject);
 			damageable.TakeDamage(damage);
+			Destroy(gameObject);
 		}
 	}
 }

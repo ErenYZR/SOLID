@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleOffset: -30
+  unvalidTargetTags:
+  - Player
 --- !u!58 &2822312943384222366
 CircleCollider2D:
   m_ObjectHideFlags: 0
