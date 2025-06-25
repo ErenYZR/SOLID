@@ -13,6 +13,9 @@ public class WaveManager : MonoBehaviour
 	private int currentWave = 0;
 	public int CurrentWave => currentWave;
 	private int aliveEnemies = 0;
+	public int AliveEnemies => aliveEnemies;
+
+	public event Action<int> OnEnemyCountChanged;
 
 	private void Start()
 	{
@@ -45,6 +48,7 @@ public class WaveManager : MonoBehaviour
 		{
 			spawner.Spawn(OnEnemyDied); // callback olarak veriyoruz
 		}
+		OnEnemyCountChanged?.Invoke(aliveEnemies);
 	}
 
 	private int CalculateEnemyCount(int wave)
@@ -55,6 +59,7 @@ public class WaveManager : MonoBehaviour
 	private void OnEnemyDied()
 	{
 		aliveEnemies--;
+		OnEnemyCountChanged?.Invoke(aliveEnemies);
 
 		if (aliveEnemies <= 0)
 		{

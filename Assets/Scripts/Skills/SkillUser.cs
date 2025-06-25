@@ -48,9 +48,9 @@ public class SkillUser : MonoBehaviour
 
 	private void UseSkill()
     {
-		if (input.Skill1Triggered()) { skillSlots[0]?.Use(); print("A"); }
+		if (input.Skill1Triggered()) skillSlots[0]?.Use();
 
-		if (input.Skill2Triggered()) { skillSlots[1]?.Use(); print("B"); }
+		if (input.Skill2Triggered()) skillSlots[1]?.Use();
 	}
 
 }
