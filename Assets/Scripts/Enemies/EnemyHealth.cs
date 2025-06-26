@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IDamageReceiver
 	[SerializeField] private float currentHealth;
 	public Action OnEnemyDied;
 
+	public static event Action<Vector3> OnEnemyDiedFeedback;
 	public string DamageReceiverTag => "Enemy";
 
 	private void Awake()
@@ -36,6 +37,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IDamageReceiver
 	protected virtual void Die()
     {
 		OnEnemyDied?.Invoke();
+		OnEnemyDiedFeedback?.Invoke(transform.position);
 		Destroy(gameObject);
     }
 }
