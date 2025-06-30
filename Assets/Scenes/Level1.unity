@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a86e0fbd33edd640bff3d504d0d3be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalWaveCount: 5
+  totalWaveCount: 0
   timeBetweenWaves: 2.5
   spawner: {fileID: 1267730328}
 --- !u!4 &252432162
